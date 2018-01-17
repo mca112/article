@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+{% load staticfiles %}
+<script src="{% static "jquery-2.1.1.js" %}">
+</script>
+<script src="{% static "csrf.js" %}">
+</script>
+
+<script>
+
+</script>
+</head>
+<body>
+<h2>register page</h2>
+<p>{{ msg }}</p>
+<form  method="post" >
+ 	{% csrf_token %}
+	
+	<div class="username">
+	{{ form.username.errors }}
+	<p> username:{{ form.username }}</p>	
+
+	</div>
+	
+	<div class="password1">
+	{{ form.password1.errors }}
+	<p> password:</p>
+	{{ form.password1 }}
+	</div>
+
+	<div class="password2">
+	{{ form.password2.errors }}
+	<p> repassword:</p>
+	{{ form.password2 }}
+	</div>
+	<input id="sub" type="submit" value="Submit" >
+</form>
+</body>
+</html>
